@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HeyMoral!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app">
+
+    <div class="animaldisplay" id="ad" style="visibility: hidden">
+      <img src="animals/bunny1gif.gif" id="animalcharacter" draggable="false" (dragstart)="false"
+        style="height: auto; top: 50px; left: 20px; position: relative">
+    </div>
+
+    <div class="navbar">
+      <img src="logo.png" id="logo" draggable="false" (dragstart)="false;"
+        style="height: 100px; width:125px; z-index: 100;">
+      <span class="left" id="nav-left"></span>
+      <span class="right" id="nav-right"></span>
+    </div>
+
+    <div class="content sidebar-hidden">
+      <div class="scene" data-scene="connecting" data-active-scene>
+        <p>Connecting...</p>
+      </div>
+
+      <div class="scene" data-scene="closed">
+        <h1>HeyMoral! is Down</h1>
+        <p>Check back later.</p>
+      </div>
+
+      <div class="scene" data-scene="error">
+        <h1>Connection Error</h1>
+        <p>This wasnt't supposed to happen.</p>
+      </div>
+
+      <div class="scene" data-scene="start">
+
+        <div class="bg" style="text-align: center">
+          <br>
+          <p>Choose your character</p>
+
+          <div class="slideshow-container fade">
+            <!-- Full images with numbers and message Info -->
+
+            <div class="Containers">
+              <img src="animals/bunny1.png" draggable="false" (dragstart)="false;" style="width:15%">
+            </div>
+
+            <div class="Containers">
+              <img src="animals/bunny2.png" draggable="false" (dragstart)="false;" style="width:15%">
+            </div>
+
+            <div class="Containers">
+              <img src="animals/cat1.png" draggable="false" (dragstart)="false;" style="width:15%">
+            </div>
+
+            <div class="Containers">
+              <img src="animals/cat2.png" draggable="false" (dragstart)="false;" style="width:15%">
+            </div>
+
+            <div class="Containers">
+              <img src="animals/goat1.png" style="width:15%">
+            </div>
+
+            <div class="Containers">
+              <img src="animals/goat2.png" style="width:15%">
+            </div>
+
+            <div class="Containers">
+              <img src="animals/koala1.png" style="width:15%">
+            </div>
+
+            <div class="Containers">
+              <img src="animals/koala2.png" style="width:15%">
+            </div>
+
+            <div class="Containers">
+              <img src="animals/pig1.png" style="width:15%">
+            </div>
+
+            <div class="Containers">
+              <img src="animals/pig2.png" style="width:15%">
+            </div>
+
+            <!-- Back and forward buttons -->
+            <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="forward" onclick="plusSlides(1)">&#10095;</a>
+            <!-- The circles/dots -->
+            <br>
+            <div style="text-align:center">
+              <span class="dots"></span>
+              <span class="dots"></span>
+              <span class="dots"></span>
+              <span class="dots"></span>
+              <span class="dots"></span>
+              <span class="dots"></span>
+              <span class="dots"></span>
+              <span class="dots"></span>
+              <span class="dots"></span>
+              <span class="dots"></span>
+            </div>
+            <br>
+            <button class="btn" id="singleplayer-room">Single Player</button>
+            <button class="btn" id="join-room">Join a Room</button>
+            <button class="btn" id="make-room">Create Room</button>
+
+          </div>
+        </div>
+
+        <div class="footer">
+          Sean Kim 2022
+        </div>
+      </div>
+
+      <div class="scene" data-scene="singleplayer-room">
+        <br>
+        <h1>Self-Reflection</h1>
+        <br>
+        <button class="bookbtn" id="sp-r1" type="button"> <img src="bookbutton.png" height="100"
+            width="100" />1</button>
+        <button class="bookbtn" id="sp-r2" type="button"> <img src="bookbutton.png" height="100"
+            width="100" />2</button>
+        <button class="bookbtn" id="sp-r3" type="button"> <img src="bookbutton.png" height="100"
+            width="100" />3</button>
+        <br>
+        <br>
+        <br>
+        <button class="btn danger" id="sp-back">Return</button>
+
+        <div class="footer">
+          Sean Kim 2022
+        </div>
+      </div>
+
+      <div class="scene" data-scene="singleplayer-room1">
+        <h1>Scenario 1</h1>
+        <a class="btn submit" href="book1.html" target="_blank" rel="noopener noreferrer" id="booknumber4"
+          style="right: 50%;">Read Scenario</a>
+        <br>
+        <br>
+        <p>What should you do in this scenario?</p>
+        <div class="cardrs1" style="margin:0 auto">
+          <textarea id=rs1 placeholder="Enter Response:"
+            style="background: transparent; color: white; height: 320pt; width:100%; padding: 12px 20px; margin: 8px 0; box-sizing: border-box; border: none; outline: none; resize: none; font: 12pt Helvetica Neue, Helvetica, sans-serif"></textarea>
+        </div>
+        <p id='suggested1' style='display: none'>Example Answer #1</p>
+        <br>
+        <button class="btn submit2" id="sp-submit1">Submit Response</button>
+        <button class="btn danger" id="sp-back1" style="margin-left: 90%;">Return</button>
+      </div>
+
+      <div class="scene" data-scene="singleplayer-room2">
+        <h1>Scenario 2</h1>
+        <a class="btn submit" href="book2.html" target="_blank" rel="noopener noreferrer" id="booknumber4"
+          style="right: 50%">Read Scenario</a>
+        <br>
+        <br>
+        <br>
+        <div class="cardrs2" style="margin:0 auto">
+          <textarea id=rs2 placeholder="What Should You Do In This Scenario?:"
+            style="background: transparent; color: white; height: 300pt; width:100%; padding: 12px 20px; margin: 8px 0; box-sizing: border-box; border: none; resize: none; outline: none; font: 12pt Helvetica Neue, Helvetica, sans-serif"></textarea>
+        </div>
+        <p id='suggested2' style='display: none'>Example Answer #2</p>
+        <br>
+        <button class="btn submit2" id="sp-submit2">Submit Response</button>
+        <button class="btn danger" id="sp-back2" style="margin-left: 90%;">Return</button>
+      </div>
+
+      <div class="scene" data-scene="singleplayer-room3">
+        <h1>Scenario 3</h1>
+        <a class="btn submit" href="book3.html" target="_blank" rel="noopener noreferrer" id="booknumber4"
+          style="right: 50%">Read Scenario</a>
+        <br>
+        <br>
+        <br>
+        <div class="cardrs3" style="margin:0 auto">
+          <textarea id=rs3 placeholder="What Should You Do In This Scenario?:"
+            style="background: transparent; color: white; height: 300pt; width:100%; padding: 12px 20px; margin: 8px 0; box-sizing: border-box; border: none; resize: none; outline: none; font: 12pt Helvetica Neue, Helvetica, sans-serif"></textarea>
+        </div>
+        <p id='suggested3' style='display: none'>Example Answer #3</p>
+        <br>
+        <button class="btn submit2" id="sp-submit3">Submit Response</button>
+        <button class="btn danger" id="sp-back3" style="margin-left: 90%;">Return</button>
+
+      </div>
+
+      <div class="scene" data-scene="make-room">
+        <h1>Create Room</h1>
+        <p>Enter Name:</p>
+        <input type="text" id="mr-name" autocomplete="off">
+        <br>
+        <p>What sets would you like to play with?</p>
+        <div class="checkboxes" id="mr-packs"></div>
+        <br>
+        <div class="btn-row">
+          <button class="btn" id="mr-submit">Create Room</button>
+          <button class="btn danger" id="mr-back">Return</button>
+        </div>
+
+        <div class="footer">
+          Sean Kim 2022
+        </div>
+      </div>
+
+      <div class="scene" data-scene="add-your-own-cards">
+        <h1>Add Your Own Scenarios</h1>
+        <div class="row">
+          <div>
+            <h2 class="blue-question heading-no-margin">Scenarios:</h2>
+            <div>Click "Add scenario" to add your own scenario.</div>
+            <table>
+              <tbody id="ayoc-questions"></tbody>
+              <tfoot>
+                <tr>
+                  <td><button class="btn" id="ayoc-add-question">Add Scenario</button></td>
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <button class="btn" id="ayoc-back">Save</button>
+
+        <div class="footer">
+          Sean Kim 2022
+        </div>
+      </div>
+
+      <div class="scene" data-scene="room-creator-lobby">
+        <h1>Lobby</h1>
+        <p>Room Code: <b><span id="rcl-code"></span></b></p>
+        <p>Lobby Members:</p>
+        <ul id="rcl-members" style="font: 15pt Helvetica Neue, Helvetica, sans-serif"></ul>
+        <br>
+        <div class="btn-row">
+          <button class="btn" id="rcl-copy-invite">Copy Invite Link</button>
+          <button class="btn" id="rcl-start-game">Start the Game</button>
+          <button class="btn danger" id="rcl-cancel">Cancel Game</button>
+        </div>
+
+        <div class="footer">
+          Sean Kim 2022
+        </div>
+      </div>
+
+      <div class="scene" data-scene="join-room">
+        <h1>Join Room</h1>
+        <p>Enter Name:</p>
+        <input type="text" id="jr-name" autocomplete="off">
+        <p>6-Digit Room Code:</p>
+        <input type="tel" id="jr-code" autocomplete="off">
+        <br>
+        <br>
+        <div class="btn-row">
+          <button class="btn" id="jr-submit">Join Room</button>
+          <button class="btn danger" id="jr-back">Return</button>
+        </div>
+
+        <div class="footer">
+          Sean Kim 2022
+        </div>
+      </div>
+
+      <div class="scene" data-scene="room-joiner-lobby">
+        <h1>Lobby</h1>
+        <p>You've joined a lobby with:</p>
+        <ul id="rjl-members" style="font: 15pt Helvetica Neue, Helvetica, sans-serif"></ul>
+        <p>The room creator will start the game soon.</p>
+
+        <div class="footer">
+          Sean Kim 2022
+        </div>
+      </div>
+
+      <div class="scene" data-scene="host-left">
+        <h1>The Room Creator Left</h1>
+        <button class="btn" id="hl-back">Main Menu</button>
+
+        <div class="footer">
+          Sean Kim 2022
+        </div>
+      </div>
+
+      <div class="scene" data-scene="preparing-game">
+        <h1>Preparing Game...</h1>
+        <p>Hang tight</p>
+
+        <div class="footer">
+          Sean Kim 2022
+        </div>
+      </div>
+
+      <div class="scene" data-scene="question">
+        <div class="status-bar">The judge for this round is <span id="q-judge"></span>.</div>
+        <h1>Scenario:</h1>
+        <a class="btn submit" href="book1.html" target="_blank" rel="noopener noreferrer" id="booknumber"
+          style="right: 50%">Read Scenario
+        </a>
+        <br>
+        <div class="inline-group">
+          <div class="bluecard blue inline" id="q-question"></div>
+        </div>
+        <p>Type your answer and click submit when finished!</p>
+        <div class="inline-group">
+          <div class="cardr1">
+            <textarea id=r1 placeholder="Enter Response:"
+              style="background: transparent; color: white; height: 300pt; width:100%; padding: 12px 20px; margin: 8px 0; box-sizing: border-box; border: none; outline: none; resize: none; font: 12pt Helvetica Neue, Helvetica, sans-serif">
+              </textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="scene" data-scene="waiting-for-others">
+        <h1>Waiting for everyone else to submit...</h1>
+        <p>Your selection was:</p>
+        <div class="inline-group">
+          <div class="bluecard blue" id="wfo-question"></div>
+          <div class="card red" id="wfo-answer"></div>
+        </div>
+      </div>
+
+      <div class="scene" data-scene="judging">
+        <h1>You are the judge this round.</h1>
+        <p>Read the scenario and select the most moral answer!</p>
+        <br>
+        <a class="btn submit" href="book1.html" target="_blank" rel="noopener noreferrer" id="booknumber3">Read
+          Scenario</a>
+        <br>
+        <div class="inline-group">
+          <div class="bluecard blue" id="j-question"></div>
+        </div>
+        <h1>Answers Submitted:</h1>
+        <div class="card-list" id="j-answers" style="margin: 0 auto"></div>
+      </div>
+
+      <div class="scene" data-scene="waiting-for-judge">
+        <h1>Your judge, <span id="wfj-judge"></span>, is deliberating...</h1>
+        <h1>Answers Submitted:</h1>
+        <div class="card-list" id="wfj-answers" style="margin: 0 auto"></div>
+      </div>
+
+      <div class="scene" data-scene="judge-selected">
+        <h1>The judge has decided!</h1>
+        <p><b id="js-submitted-by"></b> won this round with:</p>
+        <div class="inline-group">
+          <div class="bluecard blue" id="js-question"></div>
+          <div class="card red" id="js-answer"></div>
+        </div>
+        <p>Next round coming in 10 seconds...</p>
+      </div>
+
+      <div class="scene" data-scene="you-are-the-judge">
+        <h1>You are the judge this round.</h1>
+        <p>Read the scenario and select the most moral answer!</p>
+        <br>
+        <a class="btn submit" href="book1.html" target="_blank" rel="noopener noreferrer" id="booknumber2">Read
+          Scenario</a>
+        <br>
+        <div class="inline-group">
+          <div class="bluecard blue" id="yatj-question1"></div>
+        </div>
+      </div>
+
+      <div class="scene" data-scene="you-are-the-judge2">
+        <h1>You are the judge this round.</h1>
+        <p>Waiting for your friends to submit their answers...</p>
+        <h2 class="blue-question">Question:</h2>
+        <div class="inline-group">
+          <div class="bluecard blue" id="yatj-question2"></div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="message-title">
+          <span>Chat</span>
+          <button class="btn danger" id="close-chat">Close</button>
+        </div>
+        <div class="message-list" id="message-list"></div>
+        <form class="message-compose" id="msg-form">
+          <input type="text" id="msg-content" autocomplete="off">
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-bar2 hidden" id=submission>
+    <button id="submit-button">Submit Response</button>
+  </div>
+
+  <div class="bottom-bar hidden" id="chatbox">
+    <button id="open-chat">Open Chat</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
